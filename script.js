@@ -1,27 +1,3 @@
-$(document).ready(function () {
-  $(".owl-carousel").owlCarousel();
-});
-
-$(".owl-carousel").owlCarousel({
-  loop: true,
-
-  nav: true,
-  center: false,
-  autoplay: false,
-
-  responsive: {
-    0: {
-      items: 1,
-    },
-    768: {
-      items: 2,
-    },
-    1024: {
-      items: 3,
-    },
-  },
-});
-
 const searchBox = document.querySelector("#search-form");
 const shoppingChart = document.querySelector("#shopping-chart");
 const loginForm = document.querySelector("#login-form");
