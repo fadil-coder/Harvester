@@ -1,0 +1,664 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,100;1,200;1,500&display=swap");
+:root {
+  --orange: #ff7800;
+  --black: #130f40;
+  --light-color: #eee;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border: 0.2rem solid rgba(0, 0, 0, 0.5);
+  --outline: 0.1rem solid rgba(0, 0, 0, 0.2);
+  --outline-hover: 0.1rem solid var(--black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding: 7rem;
+}
+
+body {
+  background-color: #eee;
+  height: 400vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  padding: 1rem 5rem;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+}
+
+header .logo {
+  color: var(--black);
+  font-weight: 900;
+  font-size: 2.1em;
+}
+header .logo i {
+  color: var(--orange);
+}
+
+header nav a {
+  color: var(--black);
+  margin: 0 1rem;
+  font-size: 1.1em;
+}
+
+header nav a:hover {
+  color: #ff7800;
+  font-size: 1.2em;
+  transition: all 0.1s ease-in-out;
+}
+
+.icons {
+  display: flex;
+  gap: 5px;
+  font-size: 1.1em;
+}
+
+.icons .icon {
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+}
+
+.icons .icon-bars {
+  display: none;
+}
+.icons .icon:hover {
+  background-color: var(--orange);
+  color: white;
+  cursor: pointer;
+}
+
+.search-form {
+  position: absolute;
+  height: 2.3rem;
+  width: 20rem;
+  top: 5.5rem;
+  left: 110%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  padding: 0 10px;
+  border-radius: 15px;
+}
+
+.active-search {
+  left: 75%;
+}
+.search-form input {
+  text-transform: none;
+  background: none;
+  width: 100%;
+  color: var(--black);
+}
+
+.search-form i:hover {
+  color: var(--orange);
+
+  cursor: pointer;
+}
+.shopping-chart {
+  position: absolute;
+  top: 5.5rem;
+  left: 110%;
+  box-shadow: var(--box-shadow);
+  width: 35%;
+  background-color: white;
+  padding: 2rem 2rem;
+}
+
+.active-chart {
+  left: 64%;
+}
+
+.shopping-chart .box {
+  display: flex;
+  color: var(--black);
+  align-items: center;
+  margin: 1rem 2rem 0;
+}
+.shopping-chart .box img {
+  width: 150px;
+  height: 150px;
+}
+
+.shopping-chart .box p {
+  font-size: 0.9em;
+}
+.shopping-chart .box i {
+  font-size: 1.5em;
+  color: (--light-color);
+  margin-left: 4rem;
+}
+
+.shopping-chart .box i:hover {
+  color: rgb(255, 38, 0);
+  cursor: pointer;
+}
+
+.shopping-chart .total {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 400;
+}
+
+.shopping-chart .btn-checkout {
+  background-color: white;
+  color: var(--orange);
+  border: var(--black) solid 2px;
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.3em;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.shopping-chart .btn-checkout:hover {
+  background-color: var(--orange);
+  color: white;
+}
+
+.login-form {
+  position: absolute;
+  background-color: white;
+  top: 5.5rem;
+  width: 30%;
+  left: 110%;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.login-active {
+  left: 68%;
+}
+
+.login-form input {
+  font-size: 1em;
+  margin: 0.5rem 0;
+  padding: 0.3rem 0.2rem;
+}
+
+.login-form > * {
+  text-transform: capitalize;
+}
+
+.login-form > a {
+  color: var(--orange);
+}
+.login-form span,
+a {
+  font-size: 0.9em;
+}
+
+.login-form input {
+  width: 100%;
+  background-color: var(--light-color);
+}
+
+.btn-submit {
+  display: flex;
+  justify-content: center;
+}
+.login-form #submit {
+  background-color: white;
+  color: var(--orange);
+  border: var(--black) solid 2px;
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.1em;
+  border-radius: 1rem;
+  text-align: center;
+  width: auto;
+  padding: 0.5rem 1.5rem;
+}
+
+.login-form #submit:hover {
+  cursor: pointer;
+  background-color: var(--orange);
+  color: white;
+}
+.jumbotron {
+  position: relative;
+  background-image: url("./img/pexels-goumbik-616401.jpg");
+  height: 100vh;
+  background-position: center;
+  /* background-attachment: fixed; */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.jumbotron-dialog {
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--black);
+}
+
+.jumbotron-dialog h1 {
+  font-size: 2.9em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.jumbotron-dialog span {
+  color: var(--orange);
+}
+
+.jumbotron-dialog p {
+  font-size: 1.2em;
+  margin: 5px;
+}
+
+.jumbotron-btn button {
+  margin-top: 10px;
+  padding: 8px 18px;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: transparent;
+}
+.jumbotron-btn button:hover {
+  background-color: var(--orange);
+  cursor: pointer;
+}
+.jumbotron-btn a {
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+}
+
+.service {
+  margin-top: 4rem;
+}
+
+.service h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--black);
+  font-size: 2.7em;
+}
+
+.service h1 span {
+  color: var(--orange);
+}
+.cards-service {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card-service {
+  width: 20%;
+  border: var(--outline);
+  padding: 0.5rem;
+  background-color: white;
+}
+
+.card-service:hover {
+  border: var(--outline-hover);
+  cursor: pointer;
+}
+
+.content-service {
+  border: var(--outline);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  height: 100%;
+}
+
+.content-service h4 {
+  color: var(--black);
+  font-size: 1.3em;
+  margin: 0.5rem 0;
+}
+
+.content-service p {
+  font-size: 0.8em;
+  color: var(--black);
+}
+
+.content-service p {
+  text-align: center;
+}
+
+.content-service img {
+  width: 100%;
+}
+
+/* products */
+.products h1 {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--black);
+  font-size: 2.7em;
+}
+
+.products h1 span {
+  color: var(--orange);
+}
+
+.cards-product {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 90%;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-product {
+  width: 15rem;
+  border: var(--outline);
+  padding: 0.5rem;
+  background-color: white;
+}
+
+.card-product :hover {
+}
+
+.content-product {
+  border: var(--outline);
+
+  background-color: white;
+  padding: 1rem;
+  height: 100%;
+}
+
+.content-product .btn-add {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-product .btn-add a:hover {
+  cursor: pointer;
+  background-color: rgb(8, 194, 8);
+  color: white;
+}
+.content-product .btn-add a {
+  display: inline;
+  text-align: center;
+  color: var(--black);
+  border: var(--black) 1px solid;
+
+  padding: 0.2rem 1rem;
+}
+
+.content-product h4 {
+  color: var(--black);
+  font-size: 1.3em;
+  margin: 0.5rem 0;
+}
+
+.content-product p {
+  font-size: 0.8em;
+  color: var(--black);
+}
+
+.content-product p {
+  text-align: center;
+}
+.content-product h4 {
+  text-align: center;
+}
+
+.content-product img {
+  width: 100%;
+}
+
+.about {
+  width: 100%;
+  text-align: center;
+  margin-top: 7rem;
+}
+
+.about h1 {
+  text-align: center;
+  color: var(--black);
+  font-size: 2.7em;
+}
+
+.about h1 span {
+  color: var(--orange);
+}
+
+.about h1 {
+  margin-bottom: 2rem;
+}
+.about-content {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.about-img {
+  width: 50%;
+}
+
+.about-dialog {
+  width: 50%;
+  text-align: start;
+}
+
+.about-img img {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+  margin-top: 6rem;
+  background-color: white;
+  color: var(--black);
+  padding-top: 1rem;
+}
+
+.footer h1 {
+  font-size: 1.5em;
+}
+
+.footer h1 i {
+  color: var(--orange);
+}
+
+.footer-profile {
+  width: 25%;
+}
+
+.footer-profile p {
+  font-size: 0.8em;
+}
+
+.footer-profile .social {
+  font-size: 1.2em;
+}
+
+.footer-profile p i {
+  margin-right: 5px;
+  padding: 5px;
+  background-color: #eee;
+}
+
+.footer-profile h1,
+p {
+  margin-bottom: 1rem;
+}
+
+.footer-contacts {
+  width: 25%;
+}
+
+.footer-contacts h1 {
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  width: 25%;
+}
+
+.footer-links {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  display: block;
+  color: var(--black);
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.footer-links a i {
+  color: var(--orange);
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 80%;
+  }
+  nav {
+    position: absolute;
+    width: 20rem;
+    top: 6rem;
+    left: 110%;
+    z-index: 99999;
+    background-color: white;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-active {
+    left: 75%;
+  }
+
+  nav a {
+    display: inline-block;
+  }
+
+  .icons .icon-bars {
+    display: inline;
+  }
+
+  .active-search {
+    left: 60%;
+  }
+
+  .active-chart {
+    left: 63%;
+  }
+
+  .shopping-chart .box i {
+    font-size: 1.2em;
+    color: (--light-color);
+    margin-left: 4rem;
+  }
+
+  .cards-service {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .content-service {
+    border: var(--outline);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    height: 100%;
+  }
+
+  .card-service {
+    width: 30%;
+    border: var(--outline);
+    padding: 0.5rem;
+    background-color: white;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 60%;
+  }
+
+  nav {
+    position: absolute;
+    width: 20rem;
+    top: 6rem;
+    left: 110%;
+    z-index: 99999;
+    background-color: white;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .active-search {
+    left: 51%;
+  }
+
+  .nav-active {
+    left: 65%;
+  }
+
+  nav a {
+    display: inline-block;
+  }
+
+  .icons .icon-bars {
+    display: inline;
+  }
+
+  .cards-service {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .card-service {
+    width: 80%;
+    border: var(--outline);
+    padding: 0.5rem;
+    background-color: white;
+  }
+}
